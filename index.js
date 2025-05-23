@@ -15,15 +15,14 @@ app.use(express.json());
 // Root route returns JSON
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Student API' });
-    const students = [
+});
+
+app.get('/students', (req, res) => {
+  const students = [
     { id: 1, name: 'Pluto', major: 'CS' },
     { id: 2, name: 'Mars', major: 'Physics' }
   ];
   res.json(students);
-});
-
-app.get('/students', (req, res) => {
-
 });
 
 app.listen(PORT, () => {
